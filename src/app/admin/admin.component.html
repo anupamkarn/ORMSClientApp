@@ -1,0 +1,19 @@
+
+<div >
+    <br>
+    <table style="width: 100%" border="5">
+        <tr>
+            <th>Customer Name</th>
+            <th>Email ID</th> 
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of UserListDet">
+            <th>{{user.customername}}</th>
+            <th>{{user.email}}</th>
+            <th *ngIf="(user.status==1); else elseblock">Activated</th>
+            <ng-template #elseblock><th>Deactivated</th></ng-template>
+            <th><button (click)="UpdateCustomerStatus(user.customerid,user.status)">Status Update</button></th>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+<!-- <form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
+    <label for="UserName">UserName: </label>
+    <input ngModel name="UserName"  required >
+    <label for="Password">Password: </label>
+    <input ngModel name="Password" required>
+    <button type="submit">Submit</button>
+</form> -->
+
+<form class="form-horizontal" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" >
+    
+    <h4>Member Log in.</h4>
+    <hr>
+    <div class="form-group">
+        <label class="col-md-3 control-label"  >User Name</label>
+        <div class="col-md-10">
+            <input name="UserName" #UserName for="UserName" [(ngModel)]="LogDetails.UserName"  class="form-control" id="UserName" type="text" value="" >
+                
+            <span class="field-validation-valid text-danger" ></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label"  for="Password">Password</label>
+        <div class="col-md-10">
+            <input name="Password" class="form-control" #Password id="Password" [(ngModel)]="LogDetails.Password" type="password" data-val-required="The Password field is required."
+                >
+            <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="Password"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input class="btn btn-default" type="submit" value="Log in">
+        </div>
+    </div>
+
+</form>
