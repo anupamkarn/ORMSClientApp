@@ -18,6 +18,6 @@ export class AllProdustsOfCustomerService {
     return list;
   }
 
-  baseURl = "http://localhost:52865api/CustomerTables";
+  baseURl = "http://localhost:52865/api/CustomerTables";
   n = 1;
 }

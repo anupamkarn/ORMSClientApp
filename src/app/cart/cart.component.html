@@ -1,1 +1,37 @@
-<p>cart works!</p>
+<nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" (click)="goHome()">Home</a> 
+        <ul class="nav navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" (click)="Logout()">Logout</a> 
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" (click)="goToCart()">Cart</a> 
+        </li>
+        </ul>
+</nav>
+    
+<table border="5">
+    <tr>
+        <th>Quantity</th>
+        <th>Rate</th>
+        <th>GrossAmount</th>
+        <th>TotalAmount</th>
+    </tr>
+    <tr *ngFor="let prd of list">
+        <th>{{prd.Quantity}}</th>
+        <th>{{prd.Rate}}</th>
+        <th>{{prd.GrossAmount}}</th>
+        <th>{{prd.TotalAmount}}</th>
+    </tr>
+</table>
+<table border="5">
+    <tr>
+        <th>DiscountedAmount</th>
+        <th>TotalCartAmount</th>
+    </tr>
+    <tr>
+        <th>{{products.DiscountedAmount}}</th>
+        <th>{{products.TotalCartAmount}}</th>
+    </tr>
+</table>
+<button (click)="PlaceOrder()">Place Order</button>

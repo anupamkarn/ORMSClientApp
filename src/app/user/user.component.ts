@@ -38,7 +38,7 @@ export class UserComponent implements OnInit {
 
   }
   Logout(){
-    localStorage.setItem("LoginStatusRst", null);
+    localStorage.setItem("CustomerLoginInfo", null);
     this.route.navigate(['Home']);
   }
 
